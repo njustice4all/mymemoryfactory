@@ -175,7 +175,7 @@ str.slice(1, 7); // "ello j"  1번째부터 7번째 전까지
 
 ```javascript
 var str = 'hello javascript';
-str.substr(1, 7); // "ello ja" 1번째부터 7까지
+str.substr(1, 7); // "ello ja" 1번째 인덱스부터 7글자
 ```
 
 * toLowerCase()
