@@ -20,6 +20,14 @@ addSquares(4, 2); // 20출력
 예제의 add5와 add10은 같의 정의(makeAdder)를 가지지만 다른환경(파라매터 5, 10)을 저장한다
 
 ```javascript
+var pet = function(name) {  // 외부함수 pet의 parameter값 name
+  var getName = function() {
+    return name; // 내부함수 getName에서 외부함수 parameter값 name에 접근
+  }
+  return getName(); // 외부함수 pet에서 내부함수 getName을 리턴함
+}
+pet('dog'); // dog
+
 function makeAdder(x) {
   return function(y) {
     return x + y;
@@ -29,8 +37,8 @@ function makeAdder(x) {
 var add5 = makeAdder(5); // add5 클로저 함수
 var add10 = makeAdder(10); // add10 클로저 함수
 
-print(add5(2));  // 7
-print(add10(2)); // 12
+console.log(add5(2));  // 7
+console.log(add10(2)); // 12
 ```
 
 ## 함수 내에서 arguments
@@ -76,6 +84,8 @@ eval("2 + 2"); // 4 반환
 ## 엄격한 비교
 
 자바스크립트에서 동등성 비교시에는 === 연산자를 사용함
+
+== 은 두 값을 공통형으로 변환 후 비교
 
 ```javascript
 '' == '0'         // false
