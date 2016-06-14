@@ -153,3 +153,21 @@ var fruits = ["Apple", "Grape", "Banana", "Orange", "Lemon", "Mango"];
 // splice(인덱스, 지울 갯수, 아이템1, ..., 아이템x)
 fruits.splice(2, 0, "키위", "수박"); // 인덱스2에서 하나도 안지우고 키위와 수박을 넣는다.
 ```
+
+## Mutable / Immutable
+
+Primitive values
+
+오브젝트를 제외한 변경 불가능한 타입들
+
+***Immutable***
+
+1. Boolean
+
+2. Null
+
+3. Undefined
+
+4. number
+
+5. String : 한번 문자열이 생성되면, 그 문자열을 수정할수 없다.
