@@ -388,7 +388,6 @@ var arr = [11, 22, 33];
 Math.max(arr); // NaN
 
 Math.max.apply(this, arr); // 33
-Math.max(...arr);          // 33
 ```
 
 * Math.random()
@@ -403,6 +402,7 @@ Math.floor(Math.random() * 10);  // 0 부터 9
 * Math.round()
 
 ```javascript
+// 반올림
 Math.round(20.49);       // 20
 Math.round(20.5);        // 21
 Math.round(-21.5);       // -21  음수의 경우 소수 부분이 정확하게 -0.5이면 반환 값은 number보다 큰 가장 작은 정수
@@ -410,6 +410,10 @@ Math.round(-21.500001);  // -22
 ```
 
 ### Date
+
+날짜는 1970년 1월 1일 0시 부터 밀리초로 계산됨
+
+밀레니엄 계산과의 호환성을 위해 연도를 지정할 때는 반드시 4자리로 써야함
 
 ```javascript
 new Date(); // 로컬시간
@@ -428,10 +432,6 @@ new Date("December 17, 1995 03:24:00");
 
 new Date(year, month[, day[, hour[, minutes[, seconds[, milliseconds]]]]]);
 ```
-
-날짜는 1970년 1월 1일 0시 부터 밀리초로 계산됨
-
-밀레니엄 계산과의 호환성을 위해 연도를 지정할 때는 반드시 4자리로 써야함
 
 * Date.now()
 
