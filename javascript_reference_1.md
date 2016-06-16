@@ -34,6 +34,7 @@ numbers.sort(function(a, b) {
 }); // [1, 2, 3, 4, 5]
 
 // 알파벳 내림차순으로 정렬
+// ["Z", "Zamm", "Zam", "Ozange", "Orange", "Bcnana", "Bbnana", "Banana"]
 var fruits = ["Banana", "Bbnana", "Z", "Bcnana", "Orange", "Zamm", "Ozange", "Zam"];
 fruits.sort(function(a, b) {
   var sumA = 0, sumB = 0, arrTempA = [], arrTempB = [];
