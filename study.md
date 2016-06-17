@@ -72,6 +72,18 @@ function union() {
   }
   return result;
 }
+
+function union() {
+  var result = [];
+  var sumArr = Array.prototype.concat.apply([], arguments);
+  // var sumArr = [].concat(arguments[0], arguments[1], arguments[2] ... arguments[arguments.length - 1])
+  sumArr.forEach(function (v) {
+    if (result.indexOf(v) === -1 ) {
+      result.push(v);
+    }
+  });
+  return result;
+}
 ```
 
 ## 6. filter() 반대
@@ -85,5 +97,11 @@ function reject(arr, rejectFunc) {
     }
   }
   return result;
+}
+
+function reject(arr, rejectFunc) {
+  return arr.filter(function(v) {
+    return !rejectFunc(v);
+  });
 }
 ```
