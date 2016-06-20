@@ -1,1 +1,1 @@
-# javascript study입니다.
+# javascript study
