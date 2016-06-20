@@ -30,6 +30,6 @@ return new array.. 기존배열 변형 안됨!!! stack의 개념...
 
 removes the last element from an array and returns that element
 
-기존배열 ***변형***됨!!!
+기존배열 ***변형됨!!!***
 
 ### for문 안에서 splice() 하지마라
