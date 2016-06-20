@@ -24,8 +24,12 @@ return boolean.. testing function을 만족하면 true.. 검사중 한개라도 
 
 ### push() 
 
-return new array.. 기존배열 변형 안된!!! stack의 개념...
+return new array.. 기존배열 변형 안됨!!! stack의 개념...
 
-### pop() return 
+### pop()
+
+removes the last element from an array and returns that element
+
+기존배열 ***변형***됨!!!
 
 ### for문 안에서 splice() 하지마라
