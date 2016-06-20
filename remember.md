@@ -16,7 +16,7 @@ return single value 기존배열 변형 안됨!!! ★★★★★
 
 ### map() 
 
-return 새 배열.. 기존배열 변형 안됨!!! 익스플로러9 이상 지원 파폭 1.5이상
+return 새 배열..  익스플로러9 이상 지원 파폭 1.5이상
 
 ### every() 
 
@@ -24,7 +24,7 @@ return boolean.. testing function을 만족하면 true.. 검사중 한개라도 
 
 ### push() 
 
-return new array.. 기존배열 변형 안됨!!! stack의 개념...
+return new array.. stack의 개념...
 
 ### pop()
 
