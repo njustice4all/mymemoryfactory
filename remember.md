@@ -12,7 +12,7 @@ return nothing 1. 밸류 2. 인덱스... 기억... 배열의 요소를 반복작
 
 ### reduce() 
 
-return single value...
+return single value... 기존배열 변형 안됨
 
 initial value가 없는경우 previousValue는 배열의 첫번째값 currentValue는 배열의 두번째값
 
