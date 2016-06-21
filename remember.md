@@ -12,7 +12,27 @@ return nothing 1. 밸류 2. 인덱스... 기억... 배열의 요소를 반복작
 
 ### reduce() 
 
-return single value 기존배열 변형 안됨!!! ★★★★★
+return single value...
+
+initial value가 없는경우 previousValue는 배열의 첫번째값 currentValue는 배열의 두번째값
+
+initial value가 있는경우 previousValue는 initialValue고 currentValue는 배열의 첫번째 값
+
+[0, 1, 2, 3, 4].reduce(function(previousValue, currentValue, currentIndex, array) {
+  return previousValue + currentValue;
+});
+
+```javascript
+// 배열의 값 모두 더하기
+var total = [0, 1, 2, 3].reduce(function(a, b) {
+  return a + b;
+}); // total == 6
+
+// 2차원배열 1차원으로 내리기
+var flattened = [[0, 1], [2, 3], [4, 5]].reduce(function(a, b) {
+  return a.concat(b);
+}, []); // flattened is [0, 1, 2, 3, 4, 5]
+```
 
 ### map() 
 
