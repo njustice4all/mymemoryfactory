@@ -24,7 +24,7 @@ return boolean.. testing function을 만족하면 true.. 검사중 한개라도 
 
 ### push() 
 
-return new array.. stack의 개념...
+return new array의 length.. 기존배열 변형됨 stack의 개념...
 
 ### pop()
 
