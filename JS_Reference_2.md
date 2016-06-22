@@ -53,3 +53,87 @@ delete Math.PI; // false.. 미리 정의된 특정 속성에 영향을 주지 �
 delete myobj.h; // true.. 지워진다...
 delete myobj;   // true.. 지워진다...
 ```
+
+## in operator
+
+속성의 이름이나 배열의 인덱스가 객체에 존재하면 true 반환
+
+```javascript
+var trees = new Array("redwood", "bay", "cedar", "oak", "maple");
+4 in trees     // true.. trees객체안의 4번째 인덱스
+5 in trees     // false.. 5번째 인덱스는 없다.
+"redwood" in trees  // false  배열의 인덱스여야한다.
+
+var myCar = {
+  company: "Lamborghini",
+  model:   "Roadster",
+  year:    2014
+};
+
+"company" in myCar  // true.. myCar 객체안에 company라는 property가 있다.
+```
+
+## instanceof
+
+객체가 다른 객체의 인스턴스인지...  Object instanceof Constructor
+
+```javascript
+// Car 생성자
+function Car(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+}
+var mycar = new Car("Honda", "Accord", 1998); // Car생성자를이용해서 mycar객체를 만듬
+mycar instanceof Car;    // true
+mycar instanceof Object; // true
+```
+
+## let
+
+블록 유효범위를 갖는 지역 변수를 선언한다. var와 같은데 let은 무조건 local area에서만 쓸수 있다.
+
+코드를 좀 더 명확하고 알아보기 쉽게 하기 위해서 쓴다.
+
+```javascript
+function varTest() {
+  var x = 31;
+  if (true) {
+    var x = 71;  // 같은 var x이다.
+    console.log(x);  // 71
+  }
+  console.log(x);  // 71 당연한 결과이다.
+}
+
+function letTest() {
+  let x = 31; // letTest함수안에 x다
+  if (true) {
+    let x = 71;  // if문 안에서의 x
+    console.log(x);  // 71
+  }
+  console.log(x);  // 31
+}
+```
+
+블록 내에서 중복으로 정의한 경우 TypeError가 발생한다.
+
+```javascript
+if (x) {
+  let foo;
+  let foo; // TypeError !!!
+}
+```
+
+```javascript
+for (let i = 0; i<10; i++) {
+  console.log(i); // 0, 1, 2, 3, 4 ... 9
+}
+
+console.log(i); // i is not defined
+
+for (var i = 0; i<10; i++) {
+  console.log(i); // 0, 1, 2, 3, 4 ... 9
+}
+
+console.log(i); // 10
+```
