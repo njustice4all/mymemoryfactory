@@ -137,3 +137,42 @@ for (var i = 0; i<10; i++) {
 
 console.log(i); // 10
 ```
+
+## 재귀호출(recursive)
+
+```javascript
+// 팩토리얼... 5! => 5 x 4 x 3 x 2 x 1 ...
+function myFactorial(num) {
+  if (num === 1) {
+    return 1;
+  } else {
+    return num * myFactorial(num - 1);
+  }
+}
+
+// 더 간단하게...
+function myFactorial(num) {
+  return num === 1 ?  1 :  num * myFactorial(num - 1);
+}
+
+// 객체안에 객체가 들어있을때 꺼내는 방법...
+var sports = {
+    soccer : {step: {member : 11}, time: 90},
+    basketball : {member: 5, time: 48}
+}; // sports object안에 또 다른 object를 포함하고있는 계층적인 구조이다.
+
+function showValues(sports) {
+    var type, obj;
+    for(type in sports) {
+        obj = sports[type];
+        typeof obj === "object" ? showValues(obj) : console.log(type + " : " + obj);
+        // soccer -> compare object true -> step -> compare object true -> value -> compare object false -> member : 11
+    }
+}
+/*
+member : 11
+time : 90
+member : 5
+time: 48
+*/
+```
