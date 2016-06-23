@@ -166,7 +166,7 @@ function showValues(sports) {
     for(type in sports) {
         obj = sports[type];
         typeof obj === "object" ? showValues(obj) : console.log(type + " : " + obj);
-        // soccer -> compare object true -> step -> compare object true -> value -> compare object false -> member : 11
+// soccer -> compare object true -> step -> compare object true -> value -> compare object false -> member : 11
     }
 }
 /*
