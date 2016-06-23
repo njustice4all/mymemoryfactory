@@ -91,7 +91,7 @@ mycar instanceof Object; // true
 
 ## let
 
-블록 유효범위를 갖는 지역 변수를 선언한다. var와 같은데 let은 무조건 local area에서만 쓸수 있다.
+블록 유효범위를 갖는 지역 변수를 선언한다.
 
 코드를 좀 더 명확하고 알아보기 쉽게 하기 위해서 쓴다.
 
