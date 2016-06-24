@@ -252,9 +252,13 @@ Chrome 42.0 / explorer ?
 
 for...of는 chrome 38 / Edge 12 / Explorer ?
 
+for...in은 객체의 모든 열거가능한 속성에대해 반복
+
+for...of는 컬렉션(Array, Map, Set...) 전용. value가 나온다고 이해하면된다
+
 ```javascript
 var iterable = 'boo';
-for (var value of iterable) {
+for (var value of iterable) { // value is 속성값
   console.log(value);
 }
 /*
@@ -270,6 +274,29 @@ for (var value in iterable) {
 1
 2
 */
+
+// Object에 objCustom 빈함수 추가, Array에 arrCustom 빈함수 추가
+Object.prototype.objCustom = function () {};
+Array.prototype.arrCustom = function () {};
+
+var iterable = [3, 5, 7];
+iterable.foo = "hello";
+
+/*
+index: 0, values: 3
+index: 1, values: 5
+index: 2, values: 7
+index: foo, values: hello
+index: arrCustom, values: function () {}
+index: objCustom, values: function () {}
+*/
+for (var i in iterable) {
+  console.log('index: ' + i + ', values: ' + iterable[i]);
+}
+
+for (var i of iterable) {
+  console.log(i); // 3, 5, 7
+}
 ```
 
 ## label
@@ -462,4 +489,55 @@ var total = values.reduce((a, b) => a + b, 0);
 // 빈객체{}와 비어있는블록{}을 주의하자. 객체리터럴은 무조건 괄호로 묶는다!!!
 var chewToys = puppies.map(puppy => {});   // BUG!
 var chewToys = puppies.map(puppy => ({})); // ok
+```
+
+## 비구조화 할당
+
+배열 또는 객체에서 데이터를 '별개'변수로 추출할 수 있게하는 표현식
+
+```javascript
+var a, b, rest;
+[a, b] = [1, 2]
+// rest는 현재 undefined상태
+console.log(a) // 1
+console.log(b) // 2
+
+[a, b] = [ [3, 4], [5, 6] ]; // a변수에 배열 [3, 4], b변수에 배열 [5, 6]
+
+({a, b} = {a:1, b:2}); // Object {a: 1, b: 2} 와 같다
+
+var z = ({a, b} = {a:1, b:2}); // 이런식으로 z에 할당해서 z.a으로 접근해도 된다.
+
+var x = [1, 2, 3, 4, 5]
+var [y, z] = x // 첫번째 인덱스가 y 두번째 인덱스가 z
+console.log(y); // 1
+console.log(z); // 2
+
+var a = 1;
+var b = 3;
+// 변수의 교환...
+[a, b] = [b, a];
+console.log(a); // 3
+console.log(b); // 1
+
+// f()함수는 배열 [1, 2]를 리턴한다
+function f() {
+  return [1, 2];
+}
+
+var a, b;
+[a, b] = f();   // [a, b] = [1, 2];
+[a] = f();      // 1
+[...a] = f();   // a = [1, 2];
+console.log(a); // 1
+console.log(b); // 2
+
+// 일부 반환값을 무시하려면 ,로 구분해라
+function f() {
+  return [1, 2, 3];
+}
+
+var [a, , b] = f(); // 2를 무시함
+console.log(a); // 1
+console.log(b); // 3
 ```
