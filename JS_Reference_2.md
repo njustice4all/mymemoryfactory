@@ -73,22 +73,6 @@ var myCar = {
 "company" in myCar  // true.. myCar 객체안에 company라는 property가 있다.
 ```
 
-## instanceof
-
-객체가 다른 객체의 인스턴스인지...  Object instanceof Constructor
-
-```javascript
-// Car 생성자
-function Car(make, model, year) {
-  this.make = make;
-  this.model = model;
-  this.year = year;
-}
-var mycar = new Car("Honda", "Accord", 1998); // Car생성자를이용해서 mycar객체를 만듬
-mycar instanceof Car;    // true
-mycar instanceof Object; // true
-```
-
 ## let
 
 블록 유효범위를 갖는 지역 변수를 선언한다.
