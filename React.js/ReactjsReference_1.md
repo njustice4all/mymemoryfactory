@@ -1,9 +1,5 @@
 # component spec과 lifecycle
 
-React.createClass()를 호출하여 component class를 생성할 때 render() 메소드를 포함한 spec object를 제공해야함
-
-앞으로 설명하는 다른 lifecycle 메소드를 spec object에 추가할 수 있다.
-
 ## component specification
 
 * render()
@@ -54,17 +50,11 @@ let Counter = React.createClass({
 });
 ```
 
-setState()의 두번째인수에는 setProps()처럼 콜백 함수를 지정할 수 있다.
-
 * getDefaultProps()
 
 getDefaultProps()에서 리터럴 객체를 반환하면 기본값으로 지정됨.
 
 component instance가 만들어질 때 호출되는것이 아니라 component가 정의될 때만 호출
-
-// 만들어질때와 정의될때의 차이 ??????????
-
-getInitialState()와는 다른 개념이라고 이해함
 
 ```javascript
 let Hello = React.createClass({
@@ -203,6 +193,8 @@ var Nav = React.createClass({displayName: "Nav", });
 
 ## lifecycle method
 
+![component lifecycle](https://velopert.com/wp-content/uploads/2016/03/f.png)
+
 constructor -> componentWillMount -> render -> componentDidMount -> 상태변화
 -> componentWillReceiveProps(nextProps) -> shouldComponentUpdate(nextProps, nextState) -> componentWillUpdate(nextProps, nextState)
 -> componentDidUpdate(prevProps, prevState)
@@ -222,8 +214,6 @@ React.js는 component의 상태변화에 따라 호출되는 다양한 메소드
 ***최초 렌더링이 일어난 다음 클라이언트에서만 한번 호출*** DOM과 관련된 초기화를 하는데 사용
 
 DOM을 다루는 것 외에 Ajax요청이나 setInterval등 server-side rendering시에 불필요한 초기화 처리를 한다.
-
-자식의 refs들에 접근할 수 있다.
 
 자식 컴포넌트의 componentDidMount() 메소드는 부모 컴포넌트보다 먼저 호출됨.
 
@@ -285,9 +275,6 @@ let App = React.createClass({
     let component = (<Card number={this.state.number} />);
     return (
       <div>
-      // this._show, this._increase, this._unmount로 해도 잘 실행됨
-      // 왜 this._show, this._increase, this._unmount가 아니고 bind(this)인가?
-      // 왜 this._show(), this._increase(), this._unmount()가 아닌가?
         <Button caption="Show Card" customClass="green" onClick={this._show.bind(this)} />
         <Button caption="Increase Number" customClass="blue" onClick={this._increase.bind(this)} />
         <Button caption="Unmount Card" customClass="red" onClick={this._unmount.bind(this)} />
@@ -343,3 +330,5 @@ let Button = React.createClass({
   }
 });
 ```
+
+> https://velopert.com/1130와 Reactjs reference를 참고하여 작성함
