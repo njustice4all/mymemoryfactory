@@ -6,7 +6,7 @@ React.createClass()를 호출하여 component class를 생성할 때 render() �
 
 ## component specification
 
-* ### render()
+* render()
 
 호출되면 this.props와 this.state를 토대로 하나의 자식 element를 return
 
@@ -19,7 +19,7 @@ render()는 component의 상태를 변경하지 않고, 여러번 호출해도 �
 
 브라우저와 상호작용을 하려면 componentDidMount나 다른 lifecycle메소드에서 사용해야한다.
 
-* ### getInitialState()
+* getInitialState()
 
 prop는 외부에서 전달한 값이지 그 component가 자체적으로 관리하는 값이 아니므로 내부에서 변경하면 안됨.
 
@@ -56,7 +56,7 @@ let Counter = React.createClass({
 
 setState()의 두번째인수에는 setProps()처럼 콜백 함수를 지정할 수 있다.
 
-* ### getDefaultProps()
+* getDefaultProps()
 
 getDefaultProps()에서 리터럴 객체를 반환하면 기본값으로 지정됨.
 
@@ -81,7 +81,7 @@ let Hello = React.createClass({
 });
 ```
 
-* ### propTypes
+* propTypes
 
 component의 prop은 외부에서 값을 지정받기 때문에 validation이 필요함.
 
@@ -134,7 +134,7 @@ customPropType: function(props, propName, componentName) {
 }
 ```
 
-* ### mixins
+* mixins
 
 lifecycle보고 다시 공부할것
 
@@ -172,7 +172,7 @@ var TickTock = React.createClass({
 });
 ```
 
-* ### statics
+* statics
 
 static객체는 instance를 하나도 만들지 않은 시점에서도 호출할 수 있고, component의 props나 state에 접근할 수 없다.
 
@@ -190,7 +190,7 @@ let MyComponent = React.createClass({
 console.log(MyComponent.customMethod('bar')); // true
 ```
 
-* ### displayName
+* displayName
 
 클래스에 displayName이 정의되어있지 않으면 JSX는 변수명을 displayName으로 간주함
 
@@ -211,13 +211,13 @@ React.js는 component의 상태변화에 따라 호출되는 다양한 메소드
 
 자주 사용하는 메소드는 componentDidMount()나 componentWillUnmount()이다.
 
-* ### componentWillMount() 마운트시
+* componentWillMount() 마운트시
 
 ***최초 렌더링이 일어나기 직전에 클라이언트 및 서버에서 한번 호출*** 초기화 처리를 하는데 사용한다.
 
 이 메소드 안에서 setState를 호출하면, render()에서 업데이트된 state를 확인할 수 있고 state가 변함에도 불구하고 render()가 한번만 실행
 
-* ### componentDidMount() 마운트시
+* componentDidMount() 마운트시
 
 ***최초 렌더링이 일어난 다음 클라이언트에서만 한번 호출*** DOM과 관련된 초기화를 하는데 사용
 
@@ -227,31 +227,31 @@ DOM을 다루는 것 외에 Ajax요청이나 setInterval등 server-side renderin
 
 자식 컴포넌트의 componentDidMount() 메소드는 부모 컴포넌트보다 먼저 호출됨.
 
-* ### componentWillReceiveProps(nextProps) 업데이트시
+* componentWillReceiveProps(nextProps) 업데이트시
 
 component가 새로운 props를 받을때 실행됨. 최초 렌더링시에는 호출되지 않음
 
 prop에 따라 state를 업데이트 해야 할 때 사용하면 유용함
 
-* ### shouldComponentUpdate(nextProps, nextState) 업데이트시
+* shouldComponentUpdate(nextProps, nextState) 업데이트시
 
 prop나 state가 변경 되었을때, rerendering을 할지 말지 정하는 메소드
 
 rerendering하면 true 아니면 false
 
-* ### componentWillUpdate(nextProps, nextState) 업데이트시
+* componentWillUpdate(nextProps, nextState) 업데이트시
 
 component가 update되기 전에 실행됨
 
 이 메소드 안에서 this.setState()를 사용하면 안됨 - 무한루프에 빠짐
 
-* ### componentDidUpdate(prevProps, prevState) 업데이트시
+* componentDidUpdate(prevProps, prevState) 업데이트시
 
 component의 update가 DOM에 반영된 후(rerendering 후) 호출됨. 최초 rendering시에는 호출 안됨.
 
 component가 update된 후 DOM을 조작해야 하는 경우에 사용
 
-* ### componentWillUnmount()
+* componentWillUnmount()
 
 component가 DOM에서 사라지면 실행되는 메소드(정확히 말하면 component가 DOM에서 마운트 해제되기 직전에 호출)
 
