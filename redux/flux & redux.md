@@ -20,7 +20,7 @@ React view에서 user interact -> dispatcher를 통해 user의 action 전파 -> 
 
 ![flux구조와 데이터 흐름](http://haruair.github.io/flux/img/flux-simple-f8-diagram-with-client-action-1300w.png)
 
-* ### **Dispatcher**
+* **Dispatcher**
 
 flux application의 모든 data 흐름을 관리하는 허브역할.
 
@@ -28,14 +28,14 @@ flux application의 모든 data 흐름을 관리하는 허브역할.
 
 다른 구성요소와 달리 application에서 한개의 instance만 사용함.
 
-* ### **Store**
+* **Store**
 
 store는 application의 상태를 저장
 
-* ### **View**
+* **View**
 
 store의 변경사항을 감지할 수 있는 event listener를 store에 등록하고, store에 변화가 발생하면 view에 반영
 
 ---
 
-![redux](https://camo.githubusercontent.com/f28b5bc7822f1b7bb28a96d8d09e7d79169248fc/687474703a2f2f692e696d6775722e636f6d2f4a65567164514d2e706e67)
+# **REDUX**
