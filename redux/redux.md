@@ -32,7 +32,7 @@ flux application의 모든 data 흐름을 관리하는 허브역할.
 
 store는 application의 상태를 저장
 
-* **View**
+* View
 
 store의 변경사항을 감지할 수 있는 event listener를 store에 등록하고, store에 변화가 발생하면 view에 반영
 
