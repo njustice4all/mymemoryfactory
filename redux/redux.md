@@ -39,3 +39,5 @@ store의 변경사항을 감지할 수 있는 event listener를 store에 등록�
 ---
 
 # **REDUX**
+
+<code>테스트중</code>어떻게 나오나
