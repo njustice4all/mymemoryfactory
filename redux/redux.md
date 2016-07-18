@@ -40,9 +40,9 @@ store의 변경사항을 감지할 수 있는 event listener를 store에 등록�
 
 # **REDUX**
 
-Redux는 Flux 아키텍쳐의 구현체 중 하나이다.
+Redux는 Flux 아키텍쳐의 구현체 중 하나.
 
-Redux는 다른 Flux 아키텍쳐의 구현체와 비교해 사용법이 단순하고 용량도 2kb정도이다.
+Redux는 다른 Flux 아키텍쳐의 구현체와 비교해 사용법이 단순하고 용량도 2kb정도.
 
 보통 React와 함께 많이 사용하지만 의존성이 없어 React와 상관없이 독립적으로 사용할 수 있다.
 
@@ -189,8 +189,6 @@ function todoApp(state = initialState, action) {
   return state
 }
 ```
-
-하지만 우리가 다룰 액션은 더 있다...
 
 ```javascript
 const initialState = {
