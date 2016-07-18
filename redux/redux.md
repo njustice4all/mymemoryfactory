@@ -46,13 +46,41 @@ Redux는 다른 Flux 아키텍쳐의 구현체와 비교해 사용법이 단순�
 
 보통 React와 함께 많이 사용하지만 의존성이 없어 React와 상관없이 독립적으로 사용할 수 있다.
 
+```javascript
+import { createStore } from 'redux'
+
+// reducer
+function counter(state = 0, action) {
+  switch (action.type) {
+  case 'INCREMENT':
+    return state + 1
+  case 'DECREMENT':
+    return state - 1
+  default:
+    return state
+  }
+}
+
+// store
+let store = createStore(counter)
+
+store.subscribe(() =>
+  console.log(store.getState())
+)
+
+// action
+store.dispatch({ type: 'INCREMENT' }) // 1
+store.dispatch({ type: 'INCREMENT' }) // 2
+store.dispatch({ type: 'DECREMENT' }) // 1
+```
+
 ## **Action과 Action 생성자**
 
 ### **action**
 
 redux에서 action은 application에서 store로 보내는 데이터 묶음
 
-store.dispatch()를 통해 action들을 보낼 수 있다.
+<code>store.dispatch()</code>를 통해 action들을 보낼 수 있다.
 
 ```javascript
 // 새 할일 추가를 나타내는 액션
