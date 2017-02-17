@@ -4,6 +4,8 @@ ECMAScript 2016 standard
 
 기존의 array.indexOf(element)를 보완하기위해 나옴
 
+ie no support
+
 사용 예
 
 ```javascript
