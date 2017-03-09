@@ -6,3 +6,5 @@ https://github.com/andreypopp/autobind-decorator
 @autobind
 method () {}
 ```
+
+17/03/09 이거 대신 functional component를 사용하자
