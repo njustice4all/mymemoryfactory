@@ -1,1 +1,1 @@
-# javascript study
+# 스터디룸
