@@ -41,3 +41,33 @@ ECMAScript 2016 standard
 ```javascript
 console.log(Math.pow(2, 2) === 2 ** 2);
 ```
+
+### different sort
+```
+const arr = [6, 7, 4, 5, 3, 9, 2, 1, 8];
+
+// way 1
+arr.sort((a, b) => a - b);
+
+// way 2
+let temp = null;
+
+for (let i = 0; i < arr.length; i++) {
+  for (let j = 0; j < arr.length - 1; j++) {
+    if (arr[j] > arr[j + 1]) {
+      temp = arr[j + 1];
+      arr[j + 1] = arr[j];
+      arr[j] = temp;
+    }
+  }
+}
+
+// way 3 짜놓고도 개구림
+let tempArr = [];
+let newTemp = Object.assign([], arr);
+for (let i = 0; i < arr.length; i++) {
+  let min = Math.min(...newTemp);
+  tempArr.push(min);
+  newTemp.splice(newTemp.indexOf(min), 1);
+}
+```
