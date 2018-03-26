@@ -34,3 +34,19 @@ const reducer = (accumulator, value) => {
 
 const result = votes.reduce(reducer, initial);
 console.log(result);
+
+// 구현...
+const numbers = [12, 54, 18, 130, 44];
+
+const cal = (value, index, array) => {
+  if (array.length === index) {
+    return value;
+  }
+
+  value += array[index];
+  index++;
+  
+  return cal(value, index, array);
+}
+
+cal(0, 0, numbers);
