@@ -74,3 +74,20 @@ const result = targets.reduce((accumulator, fn) => fn(accumulator));
 
 console.log(result);
 
+// 1차원 배열 2차원배열로 나누기
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+const splitCount = 4;
+const initialValue = [];
+
+const twoDimensionArray = array.reduce((accumulator, number, index) => {
+  const arrayIndex = Math.floor(index / splitCount);
+  if (index % splitCount === 0) {
+    accumulator[arrayIndex] = [];
+  }
+
+  accumulator[arrayIndex] = [...accumulator[arrayIndex], number];
+
+  return accumulator;
+}, initialValue);
+
+console.log(twoDimensionArray);
