@@ -17,9 +17,9 @@ if ([1, 2, 3, 4, 5].indexOf(3) !== -1) {
 }
 ```
 
-명시적이지 않음 + NaN문제
+명시적이지 않음 + NaN 문제
 
-includes의 사용 예
+includes 의 사용 예
 
 ```javascript
 [1, 2, 3, 4, 5].includes(3); // true
@@ -32,7 +32,7 @@ if ([1, 2, 3, 4, 5].includes(3)) {
 
 불린값을 리턴해서 명시적으로 바뀌었다.
 
-### Exponentiation Operator **
+### Exponentiation Operator \*\*
 
 ECMAScript 2016 standard
 
@@ -43,7 +43,8 @@ console.log(Math.pow(2, 2) === 2 ** 2);
 ```
 
 ### different sort
-```
+
+```javascript
 const arr = [6, 7, 4, 5, 3, 9, 2, 1, 8];
 
 // way 1
