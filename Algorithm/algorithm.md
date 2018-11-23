@@ -476,3 +476,36 @@ function numberOfPrime(n) {
 
 console.log(numberOfPrime(10));
 ```
+
+- Count the number of Duplicates
+
+> "abcde" -> 0 # no characters repeats more than once
+> "aabbcde" -> 2 # 'a' and 'b'
+> "aabBcde" -> 2 # 'a' occurs twice and 'b' twice (bandB)
+> "indivisibility" -> 1 # 'i' occurs six times
+> "Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+> "aA11" -> 2 # 'a' and '1'
+> "ABBA" -> 2 # 'A' and 'B' each occur twice
+
+```javascript
+function duplicateCount(text) {
+  let result = 0;
+  const counting = text.split('').reduce((acc, value) => {
+    if (acc[value.toLowerCase()] === undefined) {
+      acc[value.toLowerCase()] = 1;
+    } else {
+      acc[value.toLowerCase()] = acc[value.toLowerCase()] + 1;
+    }
+
+    return acc;
+  }, {});
+
+  for (let key in counting) {
+    if (counting[key] > 1) {
+      result++;
+    }
+  }
+
+  return result;
+}
+```
